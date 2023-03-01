@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-MSQB55D');</script>
+  <!-- End Google Tag Manager -->
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163948066-3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-163948066-3', {
+      'page_title': document.title,
+      'page_path': location.href
+    });
+  </script>
+  <title>What is Kubernetes Dashboard? | Devtron</title>
+  <meta charset="utf-8">
+  <meta property="og:image" content="https://devtron.ai/images/kubernetes-dasboard/kubernetes_dashboard.png">
+  <meta property="og:url" content="https://devtron.ai">
+  <meta property="og:type" content="website" />
+  <meta name="description"
+    content="Open source Kubernetes Dashboard is helpful for UI-based deployment and management of Kubernetes resources. You will also learn the features, architecture, and open source alternatives.">
+  <meta property="og:site_name" content="Devtron Labs" />
+  <meta property="og:title" content="What is Kubernetes Dashboard? | Devtron" />
+  <meta property="og:description"
+    content="Open source Kubernetes Dashboard is helpful for UI-based deployment and management of Kubernetes resources. You will also learn the features, architecture, and open source alternatives." />
+  <meta itemprop="name" content="What is Kubernetes Dashboard? | Devtron">
+  <meta itemprop="description"
+    content="Open source Kubernetes Dashboard is helpful for UI-based deployment and management of Kubernetes resources. You will also learn the features, architecture, and open source alternatives.">
+  <meta itemprop="image" content="https://devtron.ai/images/kubernetes-dasboard/kubernetes_dashboard.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="What is Kubernetes Dashboard? | Devtron">
+  <meta name="twitter:description"
+    content="Open source Kubernetes Dashboard is helpful for UI-based deployment and management of Kubernetes resources. You will also learn the features, architecture, and open source alternatives.">
+  <meta name="twitter:image" content="https://devtron.ai/images/kubernetes-dasboard/kubernetes_dashboard.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://js.hsforms.net" crossorigin>
+  <link rel="preconnect" href="https://maxcdn.bootstrapcdn.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&family=Open+Sans:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/styles.css?time=16258199860193">
+  <link rel="stylesheet" href=" https://cdn.devtron.ai/css/animations.css">
+  <link rel=“canonical” href="https://devtron.ai/support.html" />
+  <style>
+    @media (min-width: 1100px) {
+      .top_-85 {
+        margin-top: -85px;
+      }
+
+      .top_-50 {
+        margin-top: -50px;
+      }
+    }
+
+    @media (min-width: 1250px) {
+      .left_-65 {
+        margin-left: -65px;
+      }
+    }
+
+    @media (min-width: 1440px) and (max-width: 1531px) {
+      .why-devtron__adoption-left {
+        margin-left: 0px;
+      }
+
+      .left_-65 {
+        margin-left: 45px;
+      }
+    }
+  </style>
+  <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/shell.js"></script>
+  <!-- Start of HubSpot Embed Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/6866519.js"></script>
+  <!-- End of HubSpot Embed Code -->
+  <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+  <script>
+    hbspt.forms.create({
+      region: "na1",
+      portalId: "6866519",
+      formId: "73c8cf29-2c2a-42a1-a457-5b7b43b45367",
+      target: '#request-form',
+    });
+  </script>
+  <script defer src="https://unpkg.com/scroll-out/dist/scroll-out.min.js" crossorigin="anonymous"></script>
+  <script>
+    (function (h, o, t, j, a, r) {
+      h.hj = h.hj || function () { (h.hj.q = h.hj.q || []).push(arguments) };
+      h._hjSettings = { hjid: 2082044, hjsv: 6 };
+      a = o.getElementsByTagName('head')[0];
+      r = o.createElement('script'); r.async = 1;
+      r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+      a.appendChild(r);
+    })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
+  </script>
+</head>
+
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MSQB55D" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <header>
+    <div>
+      <a onclick="viewOnDevopsInABoxBannerGAEvent('Banner')" href="./devops-in-a-box.html"
+        class="support-program__k8s devops-banner">
+        <span>🔥 DevOps in a Box </span>
+        <span class="support-program__mobile">- Leave DevOps on us; Focus on your core product. </span>
+        <span class="support-program__apply-now nextline">Click to know more! 🔥</span>
+      </a>
+    </div>
+    <div data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease"
+      role="banner" class="navbar w-nav nav-top">
+      <div class="container flex">
+        <div class="menu-button w-nav-button">
+          <div class="w-icon-nav-menu"></div>
+        </div>
+        <a href="index.html" aria-current="page" class="brand w-nav-brand w--current"><img src="images/Logo.svg"
+            loading="lazy" alt=""></a>
+        <nav role="navigation" class="nav-menu w-nav-menu">
+          <a href="./devops-in-a-box.html" class="nav-link white w-nav-link"
+            onclick='viewOnAdoptK8sGAEvent("Nav")'>#DevOpsInABox</a>
+          <a href="https://docs.devtron.ai/" class="nav-link white w-nav-link" target="_blank">Docs</a>
+          <a href="team.html" aria-current="page" class="nav-link white w-nav-link w--current">Team</a>
+          <a href="careers.html" class="nav-link white w-nav-link">Careers</a>
+          <a href="https://devtron.ai/blog/" class="nav-link white w-nav-link" target="_blank">Blog</a>
+          <a href="contact-us.html" class="nav-link white w-nav-link">Contact Us</a>
+          <a href=" https://preview.devtron.ai/dashboard/" class="demo-button tab-view" target="_blank"
+            onclick="demoHeader('contact-us')">Try Devtron <img alt="play" src="images/icons/game-challeng.svg" />
+          </a>
+          <a href="https://github.com/devtron-labs/devtron.git" class="nav-button white w-inline-block nav-button-show"
+            target="_blank">
+            <div class="flex"><img src="images/Github-logo.svg" loading="lazy" alt="" class="nav-icon">
+              <div>Star</div>
+            </div>
+            <div class="git-count">
+              <div id="star-count"></div>
+            </div>
+          </a>
+        </nav>
+        <a href=" https://preview.devtron.ai/dashboard/" class="demo-button margin-left" target="_blank"
+          onclick="demoHeader('contact-us')">Try Devtron <img alt="play" src="images/icons/game-challeng.svg" />
+        </a>
+        <a href="https://github.com/devtron-labs/devtron.git" class="nav-button w-inline-block" target="_blank">
+          <div class="flex"><img src="images/Github-logo.svg" loading="lazy" alt="" class="nav-icon">
+            <div>Star</div>
+          </div>
+          <div class="git-count">
+            <div id="star-count"></div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="bg-white">
+    <div class="alignment-with-header">
+      <div class="kubernetes-wrapper">
+        <section class="kubernets-dashboard">
+          <div class="kubernets__dashboard">
+            <h1 class="kubernetes__h1 kubernetes__h1-pt-100">What is Kubernetes Dashboard </h1>
+            <p class="kubernetes__mb-20">Kubernetes provides a command line (CLI) component called “kubectl” for
+              carrying core operations. But there are two significant hurdles to using CLI enterprise-wide
+            </p>
+            <ul>
+              <li>The high learning curve for developers to adopt Kubernetes for deployment.</li>
+              <li>Time-consuming and frustrating work for SREs and Ops team to monitor and troubleshoot multiple
+                clusters at scale </li>
+            </ul>
+            <p class="kubernetes__mb-20">
+              Dashboard by Kubernetes ( also known as Kubernetes Dashboard) is a web-based user interface to deploy
+              applications into the Kubernetes cluster, monitor the health of all the resources and troubleshoot them in
+              case of any issues. The application is helpful for DevOps, Ops, and SRE teams to manage Kubernetes
+              resources such as Deployments, Statefulsets, Jobs, etc. One can quickly deploy an application using
+              manifest files and update the help from the UI itself.
+            </p>
+
+            <img class="kubernetes__mb-20" src="images/kubernetes-dashboard/dashboard.png" alt="kubernetes-dashboard">
+        </section>
+
+        <section class="kubernetes-features">
+          <h2 class="kubernetes__h2">Features of Kubernetes Dashboard</h2>
+          <p class="kubernetes__mb-20">Kubernetes Dashboard is compelling for the DevOps team because of two primary
+            features:</p>
+          <ul>
+            <li>Cluster-wide visibility and troubleshooting </li>
+            <li>UI-based deployments</li>
+          </ul>
+
+          <h3 class="kubernetes__h3">
+            Cluster-wide visibility and troubleshooting
+          </h3>
+          <p class="kubernetes__mb-20">The Kubernetes Dashboard will provide a view of various running workloads and
+            their
+            total count. DevOps
+            engineers will get the visibility of workloads, services, configurations and storage, and cluster view.
+          </p>
+
+          <h4 class="kubernetes__h4">Workload view</h4>
+          <p class="kubernetes__mb-20">Under the workload view, users will get the details of workloads resources such
+            as
+            Deployments, Pods,
+            ReplicaSets, DaemonSets, Job, and StatefulSet running in all the namespaces of a cluster. One can also
+            perform a granular search based on a particular namespace in a cluster. </p>
+
+          <img class="kubernetes__mb-20" src="images/kubernetes-dashboard/workload.png" alt="kubernetes-workload">
+
+          <h4 class="kubernetes__h4">Pods view</h4>
+          <p class="kubernetes__mb-20">One of the most important aspects of workloads can be the number of pods running
+            in
+            a specific node and its
+            respective namespace. </p>
+
+          <img class="kubernetes__mb-20" src="images/kubernetes-dashboard/pods.png" alt="kubernetes-pods">
+
+          <p class="kubernetes__mb-20">Users will get drilled down information about a pod, such as:</p>
+          <ul>
+            <li> Metadata about labels and annotations</li>
+            <li> Resource consumption - CPU and memory utilization</li>
+            <li> date of creation and number of restarts </li>
+            <li>Events logs and persistent volume claim</li>
+          </ul>
+          <br />
+          <img class="kubernetes__mb-20" src="images/kubernetes-dashboard/pods-details.png"
+            alt="kubernetes-pods-deatails">
+
+
+          <p class="kubernetes__mb-20">Similarly, Kubernetes Dashboard also provides an aggregated view of namespaces
+            and
+            a detailed view of
+            services & ingress objects, configmaps, network policies, secrets, and persistent volume claims in a
+            namespace. </p>
+
+          <h4 class="kubernetes__h4">Service and Ingress view</h4>
+          <p class="kubernetes__mb-20">Kubernetes Dashboard provides visibility about running Services and Ingress
+            objects, including the
+            namespace each Service or ingress belongs to, their labels, and Cluster IP. Users can get far more
+            drilled-down information about each Service, such as labels, pods, endpoints, etc.</p>
+
+          <h4 class="kubernetes__h4">Configuration and storage view</h4>
+          <p class="kubernetes__mb-20">
+            Similar to any other object views, the Kubernetes Dashboard allows the details of Persistent Volume Claims
+            (PCVs) in a cluster along with their status, storage volume, storage class, annotations, labels, namespaces,
+            etc. The Dashboard also shows the configurations of the applications deployed into the cluster, which can be
+            edited from the UI directly.
+          </p>
+
+          <h3 class="kubernetes__h3">
+            UI-based Deployment
+          </h3>
+          <p class="kubernetes__mb-20">The Kubernetes Dashboard allows you to deploy any (workload) resources from the
+            UI.
+            You can create manifest
+            files in the browser, or you can upload your manifest files from a source such as Git. And the Kubernetes
+            Dashboard will directly communicate with the Kubernetes controller to get an object of a resource created
+            for you. In the below example, we have created a manifest file to create a pod with NGINX 1.19.0 image to
+            create a pod. </p>
+
+          <img class="kubernetes__mb-20" src="images/kubernetes-dashboard/ui-deployment.png"
+            alt="kubernetes-ui-deployment">
+
+        </section>
+
+        <section class="kubernetes-architecture">
+
+          <h2 class="kubernetes__h2">Kubernetes Dashboard architecture</h2>
+          <p class="kubernetes__mb-20">
+            Kubernetes Dashboard is an external service developed on top of Kubernetes architecture. Under the hood, the
+            Dashboard uses APIs to read all cluster-wide information for visibility into a single pane. It also uses the
+            APIs to deploy resources and applications into a cluster. Both CLI and Kubernetes Dashboards depend on the
+            kube-API-server to process the requests. To get started with the CLI, the Ops team must deploy the
+            Kubernetes
+            Dashboard in the same cluster (similar to Kubectl deployment).
+          </p>
+          <img class="kubernetes__mb-20" src="images/kubernetes-dashboard/kuberetes-dashboard-architecture.png"
+            alt="kuberetes-dashboard-architectur">
+
+
+          <h2 class="kubernetes__h2">Getting started with Kubernetes Dashboard</h2>
+          <p class="kubernetes__mb-20">To get started with Kubernetes Dashboard, you need to run the following commands
+            in
+            your cluster:</p>
+
+          <h4 class="kubernetes__h4">Step-1: Deploy Kubernetes Dashboard</h4>
+          <p class="kubernetes__mb-20">Run the below command to deploy the Kubernetes Dashboard app. </p>
+
+          <pre id="kubernetesDashboard">
+          <code>
+            <img src="./images/ic-copy.svg" class="get-started__copy kubernetes__copy_icon" alt="copy"  onclick='copy(`kubectl apply -f \nhttps://raw.githubusercontent.com/kubernetes/dashboard/v2.3.1/aio/deploy/recommended.yaml`)' />
+           <div> kubectl apply <span class="code-red">-f</span></div>
+            <div><span class="code-key">https:</span>//raw.githubusercontent.com/kubernetes/dashboard/v2.3.1/aio/deploy/recommended.yaml</div>
+          </code>
+        </pre>
+
+          <p class="kubernetes__mb-20">
+            To access Kubernetes Dashboard from the local machine, one can create a secure channel to access the K8s
+            cluster
+            by running the following command:
+          </p>
+
+          <pre>
+          <img src="./images/ic-copy.svg" class="get-started__copy kubernetes__copy_icon" alt="copy" onclick="copy(`kubectl proxy`)"/>
+          <code>kubectl proxy</code>
+        </pre>
+
+          <p class="kubernetes__mb-20">You can access your Dashboard using the following URL:</p>
+          <div class="kubernetes__mb-20 kubernetes__code-blocks">
+            <img src="./images/ic-copy.svg" class="get-started__copy kubernetes__copy_icon" alt="copy"
+              onclick='copy(`http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/`)' />
+            <code>
+            http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/
+          </code>
+          </div>
+          <h4 class="kubernetes__h4">
+            Step-2: Create a service account
+          </h4>
+          <p class="kubernetes__mb-20">
+            The Kubernetes Dashboard is installed with minimal RBAC permissions, so you can access the Dashboard using a
+            bearer token. So you can create a service account and bind it to a cluster with admin rights.
+            You can use the following service account yaml file:
+          </p>
+          <pre>
+          <code >
+            <img src="./images/ic-copy.svg" class="get-started__copy kubernetes__copy_icon" alt="copy"
+            onclick='copy(`apiVersion: v1 \nkind: ServiceAccount \nmetadata: \n   name: admin-user \nnamespace: kubernetes-dashboard`)' />
+
+            <div><span class="code-key">apiVersion: </span>v1</div>
+            <div><span class="code-key">kind:</span> ServiceAccount</div>
+            <div><span class="code-key">metadata:</span></div>
+            <div><span class="code-key">&nbsp;&nbsp;name:</span> admin-user</div>
+            <div><span class="code-key">&nbsp;&nbsp;namespace:</span> kubernetes-dashboard</div>
+          </code>
+        </pre>
+
+          <p class="kubernetes__mb-20">Make service resources by using the command:</p>
+          <pre>
+          <img src="./images/ic-copy.svg" class="get-started__copy kubernetes__copy_icon" alt="copy"  onclick='copy(`kubectl - apply -f <<serviceaccount.yaml>>`)' />
+
+          <code>kubectl - apply <span class="code-red">-f</span>  &#60;&#60;serviceaccount.yaml&#62;&#62; </code>
+        </pre>
+
+          <p class="kubernetes__mb-20">
+            You can use the following ClusterRoleBinding yaml to make the service account as cluster-admin:
+          </p>
+
+          <pre>
+        <code>
+          <img src="./images/ic-copy.svg" class="get-started__copy kubernetes__copy_icon" alt="copy"
+          onclick='copy(`apiVersion: v1 \nkind: ClusterRoleBinding \nmetadata: \n   name: admin-user \nroleRef: \n   apiGroup: rbac.authorization.k8s.io \n   kind: ClusterRole \n    name: cluster-admin \nsubjects: \n    kind: ServiceAccount\n    name: admin-user\n  namespace: kubernetes-dashboard`)' />
+            <div><span class="code-key">apiVersion:</span>  v1</div>
+            <div><span class="code-key">kind:</span> ClusterRoleBinding</div>
+            <div><span class="code-key">metadata:</span></div>
+            <div><span class="code-key">&nbsp;&nbsp;name:</span> admin-user</div>
+            <div><span class="code-key">roleRef:</span></div>
+            <div><span class="code-key">  &nbsp;&nbsp;apiGroup: </span>rbac.authorization.k8s.io</div>
+            <div><span class="code-key">  &nbsp;&nbsp;kind:</span> ClusterRole</div>
+            <div><span class="code-key">  &nbsp;&nbsp;name:</span> cluster-admin</div>
+            <div><span class="code-key">subjects:</span></div>
+            <div><span class="code-key">  &nbsp;&nbsp;kind:</span> ServiceAccount</div>
+            <div><span class="code-key">  &nbsp;&nbsp;name:</span> admin-user
+            <div><span class="code-key">  &nbsp;&nbsp;namespace:</span> kubernetes-dashboard</div>
+        </code>
+      </pre>
+
+          <p class="kubernetes__mb-20">
+            Similary, apply the yaml file to create a ClusterRoleBinding resource in your cluster.
+          </p>
+
+          <h4 class="kubernetes__h4">Step-3: Generate bearer token</h4>
+
+          <p class="kubernetes__mb-20">Use the command to generate the bearer token </p>
+          <div class="kubernetes__mb-20 kubernetes__code-blocks">
+            <code>
+            kubectl -n kubernetes-dashboard get secret $(kubectl -n
+            kubernetes-dashboard get sa/admin-user -o
+            jsonpath="{.secrets[0].name}") -o go-template="{{.data.token |
+            Base64decode}}"
+          </code>
+          </div>
+
+          <h4 class="kubernetes__h4">Step-4: Use the token and get started with the Dashboard </h4>
+          <p class="kubernetes__mb-20">You can paste the bearer token to get started with Kubernetes Dashboard.</p>
+          <img class="kubernetes__mb-20" src="images/kubernetes-dashboard/access-kubernetes-cluster.png"
+            alt="access-kubernetes-cluster">
+
+
+        </section>
+
+        <section class="kubernetes-limitations">
+          <h2 class="kubernetes__h2">Limitations of Kubernetes Dashboard</h2>
+          <p class="kubernetes__mb-20">
+            Using a UI-based Kubernetes Dashboard to replace CLI is undoubtedly good. However, there are a few
+            limitations
+            that restrict its use cases to only small startups:
+          </p>
+
+          <ol>
+            <li>
+              <strong>Lack of multicluster view: </strong>
+              Kubernetes Dashboard provides the view pertinent to namespaces in
+              a single cluster. It does not offer a view of multiple clusters.
+            </li>
+            <br/>
+            <li>
+              <strong> Minimal RBAC: </strong>
+              Kubernetes does not provide granular access control for various users. One has to be dependent on
+              token or kubeconfig files.
+            </li>
+            <br/>
+            <li>
+              <strong>Lack of Single Sign On(SSO): </strong>
+              Kubernetes Dashboard does not provide SSO login services. SSO is essential for mid and large enterprises
+              to
+              secure resources and applications in Kubernetes.
+            </li>
+            <br/>
+            <li>
+              <strong>No Node management: </strong>
+              Kubernetes Dashboard DevOps team to view the node information such as status, labels, limits, and
+              memory/CPU
+              requests, machine ID, addresses, allocated resources, pods, etc. But does not allow any provision to edit
+              nodes. This is essential because if a node is unhealthy, it will not run any pods and will not participate
+              in
+              cluster activity.
+            </li>
+            <br/>
+            <li>
+              <strong>Zero visibility and manageability of HELM charts: </strong>
+              Many organizations use them to deploy their Kubernetes applications at scale. Unfortunately, Kubernetes
+              Dashboard does not provide the capability to HELM Dashboards.
+            </li>
+            <br/>
+            <li>
+              <strong>Lack of application view: </strong>
+              Kubernetes Dashboard provides the resource or object view but needs to provide more information about
+              applications, making it cumbersome for developers to modify any deployments. Without application view,
+              Kubernetes Dashboard has restricted its usage to only the Ops team.
+            </li>
+            <br/>
+            <li>
+              <strong>Audit: </strong>
+              Kubernetes Dashboard does not offer audit reports of deployments, such as who, when, and how an
+              application
+              is
+              being deployed.
+            </li>
+            <br/>
+          </ol>
+
+          <p class="kubernetes__mb-20">Note, although Kubernetes Dashboard is also developed to make the deployment easy
+            from UI, today, there is no
+            mechanism to apply advanced deployment strategies such as canary from the UI.</p>
+        </section>
+
+        <section class="kubernetes-alternatives">
+          <h2 class="kubernetes__h2">Open source alternatives to Kubernetes Dashboards</h2>
+          <p class="kubernetes__mb-20">
+            There are four open-source alternatives to Kubernetes Dashboard, either built independently or on the top of
+            the
+            Dashboard project, to increase the capability of deployments, monitoring, and troubleshooting from UI.
+          </p>
+
+          <h3 class="kubernetes__h3"> <a href="https://github.com/lensapp/lens/" class="link" target="_blank">1.
+              OpenLens:</a></h3>
+          <p class="kubernetes__mb-20">An open-source software with an MIT license used for multicluster management and
+            monitoring workloads. It
+            also
+            provides basic HELM resource management and resource grouping, but it may require a learning curve.
+            Secondly,
+            it
+            has a few blind spots as it does not provide HELM chart groups for multicluster deployments, Chart config
+            differences, etc. Read more about <a
+              href="https://devtron.ai/blog/devtron-vs-openlens-a-comparative-analysis/" class="link" target="_blank">
+              Devtron vs OpenLens</a>.</p>
+
+          <h3 class="kubernetes__h3"><a href="https://github.com/vmware-archive/octant" class="link" target="_blank">2.
+              Octant: </a></h3>
+          <p class="kubernetes__mb-20">
+            Open source dashboard started by VMware but is archived now- no community support, and you are on your own.
+            Initially, the project was targeted for developers to use the UI to ship code faster into clusters. Octane
+            has
+            limited functionalities wrt cluster visualization and management. Read more about <a
+              href="https://devtron.ai/blog/the-kubernetes-dashboard-you-need/" class="link" target="_blank">Devtron vs
+              Octant</a>.
+          </p>
+
+          <h3 class="kubernetes__h3"><a href="https://komodor.com/" class="link" target="_blank">3. Komodor:</a></h3>
+          <p class="kubernetes__mb-20"> Komodor is another open-source platform for Kubernetes applications management
+            and
+            troubleshooting. You can
+            do
+            what Kubernetes Dashboard does and more- visibility into multiple clusters and HELM charts deployments and
+            configuration differentiation. Komodor proactively monitors the health of your clusters and helps you
+            troubleshoot your cluster with granular views into logs and events. But it may not be flexible for advance
+            deployments into multiple clouds and rollbacks. </p>
+
+          <h3 class="kubernetes__h3"><a href="https://devtron.ai/" class="link" target="_blank">4. Devtron Kubernetes
+              Dashboard: </a></h3>
+          <p class="kubernetes__mb-20">
+            Devtron provides an open-source Kubernetes-native DevOps platform that automates the entire software
+            delivery
+            process from CI, CD, GitOps, security and governance, progressive deployment, observability, monitoring, and
+            troubleshooting. <a
+              href="https://devtron.ai/blog/manage-kubernetes-like-a-pro-with-kubernetes-dashboard-by-devtron/"
+              class="link" target="_blank">Devtron Kubernetes dashboard </a> provides powerful features in a single pane
+            to make DevOps,
+            SREs,
+            and developers life simpler:
+          </p>
+
+          <ul>
+            <li><a href="https://devtron.ai/blog/what-is-the-kubernetes-resource-browser-in-devtron/" class="link"
+                target="_blank"> Multicluster resource monitoring and node management</a></li>
+            <li><a href="https://devtron.ai/blog/manage-kubernetes-like-a-pro-with-kubernetes-dashboard-by-devtron/"
+                class="link" target="_blank"> HELM chart dashboard and management from a single pane of dashboard</a>
+            </li>
+            <li> Events and real-time logs, and pod execution for debugging</li>
+            <li> UI-based deployments (or modifications to existing manifest files)</li>
+            <li>Instant rollback of new deployments to production</li>
+            <li> DORA metrics</li>
+            <li>Granular RBAC for users, action and resources. </li>
+          </ul>
+        </section>
+
+        <section class="kubernetes-comparison kubernetes__mb-20">
+          <h2 class="kubernetes__h2">Tabular comparison: <br/> Vanilla Kubernetes Dashboard vs Devtron Kubernetes dashboard vs
+            OpenLens vs Komodor</h2>
+          <div class="kubernetes__grid-wrap">
+            <div class="kubernetes__tabular-headers kubernetes__cell kubernetes_tabular-cell">Dimensions</div>
+            <div class="kubernetes__tabular-headers kubernetes__cell kubernetes_tabular-cell">Capabilities</div>
+            <div class="kubernetes__tabular-headers kubernetes__cell kubernetes_tabular-cell">Devtron Kubernetes
+              Dashboard
+            </div>
+            <div class="kubernetes__tabular-headers kubernetes__cell kubernetes_tabular-cell">Kubernetes Dashboard</div>
+            <div class="kubernetes__tabular-headers kubernetes__cell kubernetes_tabular-cell"> OpenLens</div>
+            <div class="kubernetes__tabular-headers kubernetes__cell kubernetes_tabular-cell">Komodor</div>
+
+            <div class="kubernetes_tabular-cell">Cluster and resource management</div>
+            <div class="kubernetes_tabular-cell">Multucluster and multicloud view</div>
+            <div class="kubernetes_tabular-cell flex-center">✔</div>
+            <div class="kubernetes_tabular-cell flex-center">❌</div>
+            <div class="kubernetes_tabular-cell flex-center">✔</div>
+            <div class="kubernetes_tabular-cell flex-center">✔</div>
+
+            <div class="kubernetes_tabular-cell"></div>
+            <div class="kubernetes_tabular-cell">Event and real-time log monitoring</div>
+            <div class="kubernetes_tabular-cell flex-center">✔</div>
+            <div class="kubernetes_tabular-cell flex-center">✔</div>
+            <div class="kubernetes_tabular-cell flex-center">✔</div>
+            <div class="kubernetes_tabular-cell flex-center">✔</div>
+
+            <div class="kubernetes_tabular-cell"></div>
+            <div class="kubernetes_tabular-cell">Live metrics update</div>
+            <div class="kubernetes_tabular-cell flex-center">✔</div>
+            <div class="kubernetes_tabular-cell flex-center">✔</div>
+            <div class="kubernetes_tabular-cell flex-center">✔</div>
+            <div class="kubernetes_tabular-cell flex-center">✔</div>
+
+            <div class="kubernetes_tabular-cell"></div>
+            <div class="kubernetes_tabular-cell">Resource grouping and monitoring</div>
+            <div class="kubernetes_tabular-cell flex-center">✔</div>
+            <div class="kubernetes_tabular-cell flex-center">✔</div>
+            <div class="kubernetes_tabular-cell flex-center">✔</div>
+            <div class="kubernetes_tabular-cell flex-center">✔</div>
+
+            <div class="kubernetes_tabular-cell"></div>
+            <div class="kubernetes_tabular-cell">Node management</div>
+            <div class="kubernetes_tabular-cell flex-center">✔</div>
+            <div class="kubernetes_tabular-cell flex-center">❌</div>
+            <div class="kubernetes_tabular-cell flex-center">✔</div>
+            <div class="kubernetes_tabular-cell flex-center">✔</div>
+
+
+            <div class="kubernetes_tabular-cell"></div>
+            <div class="kubernetes_tabular-cell">Support for the custom image to use tools like k9s, netshoot, busybox,
+              kubectl, for debugging</div>
+            <div class="kubernetes_tabular-cell flex-center">✔</div>
+            <div class="kubernetes_tabular-cell flex-center">❌</div>
+            <div class="kubernetes_tabular-cell flex-center">❌</div>
+            <div class="kubernetes_tabular-cell flex-center">✔</div>
+
+
+            <div class="kubernetes_tabular-cell">HELM Dashboard and management</div>
+            <div class="kubernetes_tabular-cell">HELM charts deployment</div>
+            <div class="kubernetes_tabular-cell flex-center">✔</div>
+            <div class="kubernetes_tabular-cell flex-center">❌</div>
+            <div class="kubernetes_tabular-cell flex-center">✔</div>
+            <div class="kubernetes_tabular-cell flex-center">✔</div>
+
+            <div class="kubernetes_tabular-cell"></div>
+            <div class="kubernetes_tabular-cell">Chart market place</div>
+            <div class="kubernetes_tabular-cell flex-center">✔</div>
+            <div class="kubernetes_tabular-cell flex-center">❌</div>
+            <div class="kubernetes_tabular-cell flex-center"></div>
+            <div class="kubernetes_tabular-cell flex-center">✔</div>
+
+            <div class="kubernetes_tabular-cell"></div>
+            <div class="kubernetes_tabular-cell">Chart Groups for Multi-charts deployment</div>
+            <div class="kubernetes_tabular-cell flex-center">✔</div>
+            <div class="kubernetes_tabular-cell flex-center">❌</div>
+            <div class="kubernetes_tabular-cell flex-center">✔</div>
+            <div class="kubernetes_tabular-cell flex-center">✔</div>
+
+            <div class="kubernetes_tabular-cell"></div>
+            <div class="kubernetes_tabular-cell">Charts configuration and manifest Diff</div>
+            <div class="kubernetes_tabular-cell flex-center">✔</div>
+            <div class="kubernetes_tabular-cell flex-center">❌</div>
+            <div class="kubernetes_tabular-cell flex-center">✔</div>
+            <div class="kubernetes_tabular-cell flex-center">✔</div>
+
+            <div class="kubernetes_tabular-cell"></div>
+            <div class="kubernetes_tabular-cell">Deployment history of chartst</div>
+            <div class="kubernetes_tabular-cell flex-center">✔</div>
+            <div class="kubernetes_tabular-cell flex-center">❌</div>
+            <div class="kubernetes_tabular-cell flex-center">❌</div>
+            <div class="kubernetes_tabular-cell flex-center">✔</div>
+
+
+            <div class="kubernetes_tabular-cell"></div>
+            <div class="kubernetes_tabular-cell">Chart upgradation</div>
+            <div class="kubernetes_tabular-cell flex-center">✔</div>
+            <div class="kubernetes_tabular-cell flex-center">❌</div>
+            <div class="kubernetes_tabular-cell flex-center">❌</div>
+            <div class="kubernetes_tabular-cell flex-center">✔</div>
+
+
+            <div class="kubernetes_tabular-cell">Deployment</div>
+            <div class="kubernetes_tabular-cell">Manifest-based </div>
+            <div class="kubernetes_tabular-cell flex-center">✔</div>
+            <div class="kubernetes_tabular-cell flex-center">✔</div>
+            <div class="kubernetes_tabular-cell flex-center">❌</div>
+            <div class="kubernetes_tabular-cell flex-center">❌</div>
+
+            <div class="kubernetes_tabular-cell"></div>
+            <div class="kubernetes_tabular-cell">Rollback</div>
+            <div class="kubernetes_tabular-cell flex-center">✔</div>
+            <div class="kubernetes_tabular-cell flex-center">❌</div>
+            <div class="kubernetes_tabular-cell flex-center">✔</div>
+            <div class="kubernetes_tabular-cell flex-center">❌</div>
+
+            <div class="kubernetes_tabular-cell"></div>
+            <div class="kubernetes_tabular-cell">Canary</div>
+            <div class="kubernetes_tabular-cell flex-center">✔</div>
+            <div class="kubernetes_tabular-cell flex-center">❌</div>
+            <div class="kubernetes_tabular-cell flex-center">❌</div>
+            <div class="kubernetes_tabular-cell flex-center">❌</div>
+
+            <div class="kubernetes_tabular-cell"></div>
+            <div class="kubernetes_tabular-cell">DevOps KPIs (DORA metrics)</div>
+            <div class="kubernetes_tabular-cell flex-center">✔</div>
+            <div class="kubernetes_tabular-cell flex-center">❌</div>
+            <div class="kubernetes_tabular-cell flex-center">❌</div>
+            <div class="kubernetes_tabular-cell flex-center">❌</div>
+
+            <div class="kubernetes_tabular-cell"></div>
+            <div class="kubernetes_tabular-cell">Audit</div>
+            <div class="kubernetes_tabular-cell flex-center">✔</div>
+            <div class="kubernetes_tabular-cell flex-center">❌</div>
+            <div class="kubernetes_tabular-cell flex-center">❌</div>
+            <div class="kubernetes_tabular-cell flex-center">❌</div>
+
+
+            <div class="kubernetes_tabular-cell">Security</div>
+            <div class="kubernetes_tabular-cell">SSO (Google, Github, Google, Gitlab, etc)</div>
+            <div class="kubernetes_tabular-cell flex-center">✔</div>
+            <div class="kubernetes_tabular-cell flex-center">❌</div>
+            <div class="kubernetes_tabular-cell flex-center">❌</div>
+            <div class="kubernetes_tabular-cell flex-center">❌</div>
+
+            <div class="kubernetes_tabular-cell"></div>
+            <div class="kubernetes_tabular-cell">RBAC (LDAP, SAML, etc )</div>
+            <div class="kubernetes_tabular-cell flex-center">✔</div>
+            <div class="kubernetes_tabular-cell flex-center">❌</div>
+            <div class="kubernetes_tabular-cell flex-center">✔</div>
+            <div class="kubernetes_tabular-cell flex-center">◐</div>
+
+            <div class="kubernetes_tabular-cell">Integrations with DevOps tools</div>
+            <div class="kubernetes_tabular-cell">
+              - CI
+              - CD
+              - Monitoring
+              - Logging
+            </div>
+            <div class="kubernetes_tabular-cell flex-center">✔</div>
+            <div class="kubernetes_tabular-cell flex-center">❌</div>
+            <div class="kubernetes_tabular-cell flex-center">❌</div>
+            <div class="kubernetes_tabular-cell flex-center">✔</div>
+
+            <div class="kubernetes_tabular-cell">Deployment models</div>
+            <div class="kubernetes_tabular-cell">On-prem</div>
+            <div class="kubernetes_tabular-cell flex-center">✔</div>
+            <div class="kubernetes_tabular-cell flex-center">✔</div>
+            <div class="kubernetes_tabular-cell flex-center">✔</div>
+            <div class="kubernetes_tabular-cell flex-center">✔</div>
+
+            <div class="kubernetes_tabular-cell"></div>
+            <div class="kubernetes_tabular-cell">Managed (web-based)</div>
+            <div class="kubernetes_tabular-cell flex-center">✔</div>
+            <div class="kubernetes_tabular-cell flex-center">❌</div>
+            <div class="kubernetes_tabular-cell flex-center">❌</div>
+            <div class="kubernetes_tabular-cell flex-center">✔</div>
+
+            <div class="kubernetes_tabular-cell"></div>
+            <div class="kubernetes_tabular-cell">Saas</div>
+            <div class="kubernetes_tabular-cell flex-center">❌</div>
+            <div class="kubernetes_tabular-cell flex-center">❌</div>
+            <div class="kubernetes_tabular-cell flex-center">❌</div>
+            <div class="kubernetes_tabular-cell flex-center">✔</div>
+
+            <div class="kubernetes_tabular-cell">Enterprise support</div>
+            <div class="kubernetes_tabular-cell"></div>
+            <div class="kubernetes_tabular-cell flex-center">✔</div>
+            <div class="kubernetes_tabular-cell flex-center">❌</div>
+            <div class="kubernetes_tabular-cell flex-center">❌</div>
+            <div class="kubernetes_tabular-cell flex-center">✔</div>
+
+          </div>
+        </section>
+
+        <h2 class="kubernetes__h2">Getting started with Devtron Kubernetes Dashboard</h2>
+        <p>
+          To deploy and manage Kubernetes at scale in medium and large enterprises, DevOps, Ops, and SREs teams would
+          require a one-stop solution for observability and control of Kubernetes resources. Devtron Kubernetes
+          Dashboard
+          provides free functionality, and it is open source. <a href="https://github.com/devtron-labs/dashboard"
+            target="_blank" class="link">Get started with Devtron Kubernetes Dashboard </a> today.
+        </p>
+        <br />
+        <br />
+        <div class="flex-center column">
+        <div class="pb-20">If you need help or have questions</div>
+
+        <a href="https://meetings.hubspot.com/srahul" target="_blank"
+          class="button-early-access button-early-access--easily-integtate" onclick='learnMoreGAEvent()'>
+          Talk to an expert:
+          <img src="./images/line.svg" class="icon-learn-more" alt="Forward arrow" />
+        </a>
+      </div>
+      </div>
+
+    </div>
+
+    <hr class="divider-join-community-learning" />
+
+  </main>
+  <footer class="bg-blue">
+    <div class="devtron-footer" data-ga-event-label="Footer">
+      <div class="devtron-footer__content">
+        <div class="devtron-footer__left">
+          <img class="devtron-footer__logo" src="./images/devtron-header-logo.svg" alt="devtron-header-logo" width="120"
+            height="32" />
+          <h3 class="devtron-footer__title">An open-source release orchestration & CI/CD platform for
+            Kubernetes</h3>
+          <a href="https://github.com/devtron-labs/devtron.git" target="_blank" class="devtron-footer__git"
+            onclick='viewOnGithubGAEvent("Footer")'>
+            <svg class="devtron-footer__icon" width="16" height="16" viewBox="0 0 16 16" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M6.14335 13.8122C6.40785 13.7329 6.55794 13.4542 6.47859 13.1897C6.39924 12.9252 6.1205 12.7751 5.856 12.8544L6.14335 13.8122ZM1.45428 10.8483C1.18638 10.7813 0.914911 10.9442 0.847937 11.2121C0.780962 11.48 0.943842 11.7514 1.21174 11.8184L1.45428 10.8483ZM10.1663 15.3333C10.1663 15.6095 10.3902 15.8333 10.6663 15.8333C10.9425 15.8333 11.1663 15.6095 11.1663 15.3333H10.1663ZM10.6663 12.7533L10.1679 12.7141C10.1668 12.7272 10.1663 12.7402 10.1663 12.7533H10.6663ZM10.0396 11.0133L9.98426 10.5164C9.79466 10.5375 9.63361 10.6647 9.5691 10.8443C9.50459 11.0238 9.54787 11.2244 9.68065 11.3614L10.0396 11.0133ZM14.333 6.34666H14.833V6.34657L14.333 6.34666ZM13.333 3.84666L12.8645 3.67184C12.7976 3.85111 12.8389 4.05284 12.9708 4.19142L13.333 3.84666ZM13.273 1.33333L13.7325 1.13636C13.674 0.999729 13.5577 0.896242 13.4152 0.853972L13.273 1.33333ZM10.6663 2.32L10.5355 2.80259C10.6752 2.84045 10.8245 2.81591 10.9447 2.73532L10.6663 2.32ZM5.99965 2.32L5.72125 2.73532C5.84148 2.81591 5.99073 2.84045 6.13044 2.80259L5.99965 2.32ZM3.39298 1.33333L3.2508 0.853972C3.10829 0.896242 2.99197 0.999729 2.93341 1.13636L3.39298 1.33333ZM3.33298 3.84666L3.69511 4.19143C3.82705 4.05285 3.86833 3.85111 3.80142 3.67184L3.33298 3.84666ZM2.33298 6.36666H2.83299L2.83297 6.36401L2.33298 6.36666ZM6.62631 11.0333L6.98562 11.381C7.11744 11.2448 7.1609 11.0458 7.09784 10.867C7.03478 10.6882 6.87606 10.5605 6.68794 10.5371L6.62631 11.0333ZM5.99965 12.7533H6.49965C6.49965 12.7416 6.49924 12.7299 6.49842 12.7183L5.99965 12.7533ZM5.49965 15.3333C5.49965 15.6095 5.72351 15.8333 5.99965 15.8333C6.27579 15.8333 6.49965 15.6095 6.49965 15.3333H5.49965ZM5.856 12.8544C5.07952 13.0874 4.54652 13.0919 4.1657 13.0027C3.79132 12.9151 3.51604 12.7259 3.26989 12.4798C3.14401 12.3539 3.02755 12.2149 2.90736 12.0644C2.79333 11.9215 2.66306 11.7514 2.53655 11.6028C2.2813 11.3032 1.94554 10.9711 1.45428 10.8483L1.21174 11.8184C1.38714 11.8622 1.55138 11.9884 1.7753 12.2513C1.88837 12.384 1.99248 12.5212 2.12585 12.6882C2.25304 12.8476 2.39701 13.0211 2.56279 13.1869C2.89997 13.5241 3.33303 13.8349 3.93782 13.9764C4.53616 14.1165 5.25316 14.0793 6.14335 13.8122L5.856 12.8544ZM11.1663 15.3333V12.7533H10.1663V15.3333H11.1663ZM11.1648 12.7925C11.2266 12.0064 10.9476 11.2315 10.3986 10.6653L9.68065 11.3614C10.0297 11.7214 10.2072 12.2142 10.1679 12.7141L11.1648 12.7925ZM10.095 11.5103C11.1698 11.3905 12.3657 11.12 13.2931 10.3402C14.2448 9.53991 14.833 8.27479 14.833 6.34666H13.833C13.833 8.05854 13.3211 9.01009 12.6495 9.57481C11.9536 10.16 11.0028 10.4029 9.98426 10.5164L10.095 11.5103ZM14.833 6.34657C14.8328 5.28746 14.4254 4.26898 13.6951 3.5019L12.9708 4.19142C13.5242 4.77262 13.8328 5.5443 13.833 6.34675L14.833 6.34657ZM13.8014 4.02148C14.1503 3.08669 14.1256 2.05344 13.7325 1.13636L12.8134 1.5303C13.1052 2.21102 13.1235 2.97798 12.8645 3.67184L13.8014 4.02148ZM13.273 1.33333C13.4152 0.853972 13.4147 0.853828 13.4142 0.853685C13.414 0.853636 13.4135 0.853491 13.4132 0.853394C13.4125 0.853199 13.4119 0.853002 13.4112 0.852802C13.4098 0.852403 13.4083 0.851996 13.4069 0.851581C13.4039 0.85075 13.4007 0.849888 13.3973 0.849002C13.3905 0.84723 13.383 0.845362 13.3746 0.843452C13.3578 0.83963 13.3377 0.835648 13.3144 0.831926C13.2676 0.824475 13.2081 0.818125 13.1354 0.816123C12.9897 0.812113 12.7934 0.825622 12.5438 0.881047C12.0454 0.991699 11.3366 1.26872 10.3879 1.90467L10.9447 2.73532C11.816 2.15128 12.4106 1.93496 12.7605 1.85728C12.935 1.81854 13.0492 1.81413 13.1079 1.81574C13.1373 1.81656 13.1535 1.8189 13.1569 1.81945C13.1586 1.81972 13.1572 1.81956 13.1528 1.81856C13.1506 1.81806 13.1477 1.81736 13.144 1.81639C13.1422 1.81591 13.1402 1.81537 13.138 1.81475C13.1369 1.81444 13.1357 1.81412 13.1345 1.81377C13.1339 1.8136 13.1333 1.81343 13.1327 1.81324C13.1324 1.81315 13.1319 1.81302 13.1318 1.81297C13.1313 1.81283 13.1308 1.81269 13.273 1.33333ZM10.7971 1.83741C9.18346 1.40007 7.4825 1.40007 5.86886 1.83741L6.13044 2.80259C7.57278 2.41168 9.09318 2.41168 10.5355 2.80259L10.7971 1.83741ZM6.27805 1.90467C5.32932 1.26872 4.6206 0.991699 4.12218 0.881047C3.87252 0.825622 3.67628 0.812113 3.53058 0.816123C3.45786 0.818125 3.39831 0.824475 3.35159 0.831926C3.32826 0.835648 3.30821 0.83963 3.2914 0.843452C3.283 0.845362 3.27542 0.84723 3.26865 0.849002C3.26527 0.849888 3.26209 0.85075 3.25911 0.851581C3.25762 0.851996 3.25619 0.852403 3.2548 0.852802C3.25411 0.853002 3.25343 0.853199 3.25276 0.853394C3.25243 0.853491 3.25194 0.853636 3.25177 0.853685C3.25128 0.853828 3.2508 0.853972 3.39298 1.33333C3.53516 1.81269 3.53468 1.81283 3.53421 1.81297C3.53405 1.81302 3.53358 1.81315 3.53327 1.81324C3.53265 1.81343 3.53205 1.8136 3.53145 1.81377C3.53026 1.81412 3.52911 1.81444 3.528 1.81475C3.5258 1.81537 3.52378 1.81591 3.52194 1.81639C3.51826 1.81736 3.51532 1.81806 3.51312 1.81856C3.50872 1.81956 3.50735 1.81972 3.50908 1.81945C3.51249 1.8189 3.52862 1.81656 3.55809 1.81574C3.61677 1.81413 3.73094 1.81854 3.90545 1.85728C4.25536 1.93496 4.84997 2.15128 5.72125 2.73532L6.27805 1.90467ZM2.93341 1.13636C2.54035 2.05344 2.51568 3.08669 2.86454 4.02148L3.80142 3.67184C3.54248 2.97798 3.56078 2.21102 3.85255 1.5303L2.93341 1.13636ZM2.97086 3.50189C2.23513 4.27466 1.82732 5.30235 1.83299 6.36932L2.83297 6.36401C2.82868 5.55559 3.13767 4.77693 3.69511 4.19143L2.97086 3.50189ZM1.83298 6.36666C1.83298 8.28306 2.42211 9.54074 3.37286 10.3402C4.29853 11.1185 5.49242 11.3963 6.56469 11.5295L6.68794 10.5371C5.66687 10.4103 4.7141 10.1614 4.01644 9.57481C3.34385 9.00925 2.83298 8.06359 2.83298 6.36666H1.83298ZM6.26701 10.6856C5.7247 11.246 5.44617 12.0105 5.50088 12.7884L6.49842 12.7183C6.46362 12.2236 6.64075 11.7374 6.98562 11.381L6.26701 10.6856ZM5.49965 12.7533V15.3333H6.49965V12.7533H5.49965Z"
+                fill="#fff" />
+            </svg>
+            View on Github
+          </a>
+        </div>
+        <div class="devtron-footer__right">
+          <article class="devtron-footer__social-mob">
+            <div class="square-container">
+              <a href="https://www.linkedin.com/company/devtron-labs/" onclick="footerLinksGAEvent('Linkedin')"
+                target="_blank" class="devtron-footer__href">
+                <img src="./images/linkedin.svg" alt="linked-in" width="20" height="20" />
+              </a>
+            </div>
+            <div class="square-container">
+              <a href="https://twitter.com/DevtronL" target="_blank" onclick="footerLinksGAEvent('Twitter')"
+                class="devtron-footer__href">
+                <img src="./images/twitter.svg" alt="twitter" width="20" height="20" />
+              </a>
+            </div>
+            <div class="square-container">
+              <a href="https://www.youtube.com/channel/UCAHRp9qp0z1y9MMtQlcFtcw/featured"
+                onclick="footerLinksGAEvent('Youtube')" target="_blank" class="devtron-footer__href">
+                <img src="./images/youtube.svg" alt="youtube" width="20" height="20" />
+              </a>
+            </div>
+            <div class="square-container">
+              <a href="https://www.facebook.com/devtronlabs" target="_blank" onclick="footerLinksGAEvent('Facebook')"
+                class="devtron-footer__href">
+                <img src="./images/facebook.svg" alt="facebook" width="20" height="20" />
+              </a>
+            </div>
+          </article>
+          <a href="https://www.facebook.com/groups/353685209144241/?ref=group_header"
+            onclick="footerLinksGAEvent('Facebook community')" target="_blank" class="fb-community">
+            <img src="https://cdn.devtron.ai/images/fb-group-cover.jpg" class="devtron-footer__fb-cover" width="180"
+              alt="join facebook community" />
+            <div class="fb-community__content">
+              <div>
+                <h6 class="fb-community__title">Join the Community</h6>
+                <p class="fb-community__desc">DevOps & Kubernetes Professionals</p>
+              </div>
+              <img src="./images/facebook.svg" alt="facebook" width="26" height="26" />
+            </div>
+          </a>
+        </div>
+      </div>
+      <p class="devtron-footer__copyright-text devtron-footer__copyright-text--mob">Made with
+        <span class="devtron-footer__heart">&hearts;</span>
+        in India
+      </p>
+      <div class="devtron-footer__copyright-indent">
+        <div class="flex footer-reverse">
+          <p class="devtron-footer__copyright-text">© 2022 DevtronLabs. All rights reserved</p>
+          <p class="devtron-footer__copyright-text divider">|</p>
+          <a class="devtron-footer__copyright-text white" href="privacy.html">Privacy policy</a>
+        </div>
+        <p class="devtron-footer__copyright-text devtron-footer__copyright-text--desktop">
+          Made with <span class="devtron-footer__heart">&hearts;</span> in India
+        </p>
+      </div>
+    </div>
+  </footer>
+  <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=61aeec2bcab0f63538b9256e"
+    type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+    crossorigin="anonymous"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" crossorigin="anonymous"></script> -->
+  <script src="js/webflow.js" type="text/javascript"></script>
+  <script defer src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    crossorigin="anonymous"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+    crossorigin="anonymous"></script>
+  <script defer src="js/main.js?time=1661244888480"></script>
+  <!-- <script src="js/support.js?time=1661244888480"></script> -->
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      getGithubStars();
+    });
+    function getGithubStars() {
+      const URL = 'https://api.github.com/orgs/devtron-labs/repos?type=all&per_page=90&page=1';
+      const xhr = new XMLHttpRequest();
+      xhr.open('GET', URL);
+      xhr.setRequestHeader('Content-Type', 'application/json');
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+          const response = JSON.parse(xhr.responseText);
+          let list = response || [];
+          let main = list.find(repo => repo.name.toLowerCase() === "devtron");
+          let stars = main.stargazers_count || 0;
+          if (stars >= 1000) stars = `${Math.trunc(10 * stars / 1000) / 10}K`;
+          document.querySelector('#star-count').innerText = stars;
+          document.querySelector('#star-count2').innerText = stars;
+        }
+        else if (xhr.readyState == 4 && xhr.status == 400) {
+        }
+      }
+      xhr.send();
+    }
+  </script>
+</body>
+
+</html>
